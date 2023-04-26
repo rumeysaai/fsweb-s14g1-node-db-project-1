@@ -44,7 +44,7 @@ router.put('/:id',mw.checkAccountId,mw.checkAccountPayload,mw.checkAccountNameUn
 
 router.delete('/:id', mw.checkAccountId, async (req, res, next) => {
   try {
-    await accountsModel.deleteById(req.params.id);
+    await AccountsModel.deleteById(req.params.id);
     res.json(`${req.Account.name} isimli kayıt silindi`);
   } catch (error) {
     next(error);
